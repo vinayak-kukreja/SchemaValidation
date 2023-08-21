@@ -20,11 +20,6 @@
       "type": "build"
     },
     {
-      "name": "cdk8s-cli",
-      "version": "^2.0.28",
-      "type": "build"
-    },
-    {
       "name": "eslint-import-resolver-node",
       "type": "build"
     },
@@ -60,6 +55,11 @@
       "type": "build"
     },
     {
+      "name": "standard-version",
+      "version": "^9",
+      "type": "build"
+    },
+    {
       "name": "ts-jest",
       "type": "build"
     },
@@ -72,18 +72,15 @@
       "type": "build"
     },
     {
-      "name": "cdk8s-plus-22",
-      "version": "^2.0.0-rc.26",
+      "name": "codemaker",
       "type": "runtime"
     },
     {
-      "name": "cdk8s",
-      "version": "^2.3.33",
+      "name": "jsii-srcmak",
       "type": "runtime"
     },
     {
-      "name": "constructs",
-      "version": "^10.1.42",
+      "name": "json2jsii",
       "type": "runtime"
     }
   ],
