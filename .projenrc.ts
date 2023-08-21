@@ -5,7 +5,7 @@ const project = new typescript.TypeScriptProject({
   name: 'SchemaValidation',
   projenrcTs: true,
   deps: ['codemaker', 'jsii-srcmak', 'json2jsii'],
-  gitignore: ['/artifacts'],
+  gitignore: ['/artifacts/'],
 
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
