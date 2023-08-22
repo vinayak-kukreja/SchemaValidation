@@ -10,7 +10,7 @@ export function pullHelmRepo(
   chartVersion: string,
   dir: string = '../artifacts',
 ) {
-  const workdir = fs.mkdtempSync(path.join(__dirname, dir, 'cdk8s-helm-'));
+  const workdir = fs.mkdtempSync(path.join(__dirname, dir, `${chartName}-`));
 
   const args = new Array<string>();
   args.push('pull');
