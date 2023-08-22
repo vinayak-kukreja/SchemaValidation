@@ -25,6 +25,14 @@ export async function runValidations(
   }
 
   const schemaFileContents = readFileSync(path.join(schemaFilePath), 'utf-8');
+
+  // Copying schema for further investigation since Json2Jsii fails on first error
+  writeFileSync(
+    path.join(__dirname, '../chart-schemas', `${chartName}.json`),
+    schemaFileContents,
+    'utf-8',
+  );
+
   const schemaFile = JSON.parse(schemaFileContents);
 
   validateSchema(schemaFile);
