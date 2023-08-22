@@ -3,12 +3,7 @@ import path from 'path';
 import { testCharts } from './test-charts';
 import { runValidations } from './validation';
 
-console.log('Hello World');
-
-const directoryPath = path.join(__dirname, '../artifacts');
-
-fs.rmSync(directoryPath, { recursive: true });
-fs.mkdirSync(directoryPath);
+setup();
 
 const main = async () => {
   for (const chart of testCharts) {
@@ -25,3 +20,13 @@ const main = async () => {
 };
 
 main();
+
+function setup() {
+  const directoryPath = path.join(__dirname, '../artifacts');
+  const storedSchemaPath = path.join(__dirname, '../chart-schemas');
+
+  fs.rmSync(directoryPath, { recursive: true });
+  fs.rmSync(storedSchemaPath, { recursive: true });
+  fs.mkdirSync(directoryPath);
+  fs.mkdirSync(storedSchemaPath);
+}

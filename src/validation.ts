@@ -53,7 +53,7 @@ export async function runValidations(
   await run(workDir, schemaFile, chartName, chartUrl, chartVersion);
 }
 
-function validateSchema(sch: JSONSchema4, prop?: string) {
+export function validateSchema(sch: JSONSchema4, prop?: string) {
   if (!sch.properties) {
     commonValidations(sch, prop);
     return;
@@ -72,7 +72,7 @@ function validateSchema(sch: JSONSchema4, prop?: string) {
   }
 }
 
-function commonValidations(sch: JSONSchema4, prop?: string) {
+export function commonValidations(sch: JSONSchema4, prop?: string) {
   //https://github.com/cdklabs/json2jsii/blob/main/src/type-generator.ts#L538
   if (sch.type === 'array' && (!sch.items || typeof sch.items !== 'object')) {
     console.log(`Impacting Property (1) ---------> ${prop}`);
